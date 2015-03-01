@@ -19,9 +19,9 @@
   <script type="text/javascript">
     rest_request = new RESTResquest()
     rest_request.onComplete = function(json_response) {
-      document.getElementById("output").innerHTML = GenericUtils.escapeHTML (JSON.stringify(json_response, null, '\t'))
+      document.getElementById("output").innerHTML = GenericUtils.html.escape (JSON.stringify(json_response, null, '  '))
     }
-    rest_request.onError = function(xhr) { document.getElementById("output").innerHTML = "ERROR! " + JSON.stringify(xhr, null, '\t')
+    rest_request.onError = function(xhr) { document.getElementById("output").innerHTML = "ERROR! " + JSON.stringify(xhr, null, '  ')
     }
     rest_request.onEnd = function(json_response) {
       console.log("end!")
@@ -29,7 +29,7 @@
 
     function reset_form() {
       // Setup default text
-      document.getElementById('form_request_str').value = JSON.stringify( RESTResquest.getTemplateRequest(), null, '\t' );
+      document.getElementById('form_request_str').value = JSON.stringify( RESTResquest.getTemplateRequest(), null, '  ' );
     }
     
     function send_form() {
