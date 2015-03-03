@@ -89,7 +89,7 @@ RESTResquest.DEFAULT = function() { }
 
 // Constantes
 RESTResquest.DEFAULT.REQUEST        = { type: "echo", data: { name: "world" } }
-RESTResquest.DEFAULT.REQUEST_URL    = "http://localhost:4567/dev/api/rest"
+RESTResquest.DEFAULT.REQUEST_URL    = "/dev/api/rest"
 RESTResquest.DEFAULT.REQUEST_TYPE   = "GET"
 RESTResquest.DEFAULT.TIMESTAMP_FUNC = function() { return new Date().getTime() }
 RESTResquest.DEFAULT.TIMEOUT        = 0
