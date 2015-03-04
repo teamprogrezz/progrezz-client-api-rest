@@ -1,10 +1,10 @@
-# Librería javascript de acceso a la API REST de PROGREZZ #
+# Javascript library for access to the PROGREZZ's API REST #
 
-## 1. Introducción ##
-Librería de acceso sencillo a la API REST del servidor de progrezz, mediante peticiones con formato JSON, recibiendo
+## 1. Introduction ##
+Library for easy access to progreszz's server API REST, by JSON format.
 
-## 2. Uso ##
-Las peticiones se realiza mediante un objeto de tipo ````RESTResquest````. Tal como se muestra en el fichero ````example.html````, se puede realizar una petición al servidor de la siguiente manera:
+## 2. Use ##
+Request make it by ````RESTResquest```` object type. Like you see on ````example.html```` file, you can make a server request like this:
 
     rest_request = new RESTResquest()
     rest_request.onComplete = function(json_response) {
@@ -26,13 +26,9 @@ Las peticiones se realiza mediante un objeto de tipo ````RESTResquest````. Tal c
     rest_request.request( RESTResquest.getTemplateRequest() )
 
 
-**Para más información de las distintas peticiones, véase la *Wiki* de este proyecto.**
+**For more information look at *Wiki* project.**
 
-## 3. Dependencias ##
-La librería hace uso de las siguientes librerías:
+## 3. Dependencies ##
+Our library uses this dependencies:
 
-- [jQuery 1.5.0 o superior](http://jquery.com/): Requerida para realizar peticiones *ajax* con la mayor compatibilidad posible.
-
-
-**TODO: Traducir al inglés.**
-----------
+- [jQuery 1.5.0 o superior](http://jquery.com/): Used for *ajax* request with the best compatibility.
