@@ -79,34 +79,34 @@ GenericUtils.xml.stringify = function ( xml ) {
 // ---------------------------
 // -      Utilidad REST      -
 // ---------------------------
-function RESTResquest() {
+function RESTRequest() {
   this.onComplete = null
   this.onFail = null
   this.onEnd = null
 }
 
-RESTResquest.DEFAULT = function() { }
+RESTRequest.DEFAULT = function() { }
 
 // Constantes
-RESTResquest.DEFAULT.REQUEST        = { type: "echo", data: { name: "world" } }
-RESTResquest.DEFAULT.REQUEST_URL    = "/dev/api/rest"
-RESTResquest.DEFAULT.REQUEST_TYPE   = "GET"
-RESTResquest.DEFAULT.TIMESTAMP_FUNC = function() { return new Date().getTime() }
-RESTResquest.DEFAULT.TIMEOUT        = 0
-RESTResquest.DEFAULT.TYPE           = "json"
+RESTRequest.DEFAULT.REQUEST        = { type: "echo", data: { name: "world" } }
+RESTRequest.DEFAULT.REQUEST_URL    = "/dev/api/rest"
+RESTRequest.DEFAULT.REQUEST_TYPE   = "GET"
+RESTRequest.DEFAULT.TIMESTAMP_FUNC = function() { return new Date().getTime() }
+RESTRequest.DEFAULT.TIMEOUT        = 0
+RESTRequest.DEFAULT.TYPE           = "json"
 
 // Plantilla por defecto
-RESTResquest.getTemplateRequest = function() {  
+RESTRequest.getTemplateRequest = function() {  
   return {
     metadata: {
-      request_url:  RESTResquest.DEFAULT.REQUEST_URL,      // URL de petición
-      timestamp:    RESTResquest.DEFAULT.TIMESTAMP_FUNC(), // Marca de fecha actual, en ms
-      timeout:      RESTResquest.DEFAULT.TIMEOUT,          // Timeout de la petición
-      type:         RESTResquest.DEFAULT.TYPE,             // Tipo de archivo solicitado (json, xml, plain-text, ...)
-      request_type: RESTResquest.DEFAULT.REQUEST_TYPE      // Tipo de petición http (get, post, ...)
+      request_url:  RESTRequest.DEFAULT.REQUEST_URL,      // URL de petición
+      timestamp:    RESTRequest.DEFAULT.TIMESTAMP_FUNC(), // Marca de fecha actual, en ms
+      timeout:      RESTRequest.DEFAULT.TIMEOUT,          // Timeout de la petición
+      type:         RESTRequest.DEFAULT.TYPE,             // Tipo de archivo solicitado (json, xml, plain-text, ...)
+      request_type: RESTRequest.DEFAULT.REQUEST_TYPE      // Tipo de petición http (get, post, ...)
       /* ... */
     },
-    request: RESTResquest.DEFAULT.REQUEST             // Petición por defecto
+    request: RESTRequest.DEFAULT.REQUEST             // Petición por defecto
   }
 }
 
@@ -117,7 +117,7 @@ if( typeof $ !== 'undefined' && GenericUtils.versions.gteVersion($.fn.jquery, "1
 
   //   Request method. A json file must be providen. See documentation
   // for more information about API REST.
-  RESTResquest.prototype.request = function( json ) {
+  RESTRequest.prototype.request = function( json ) {
     var self = this
     
     $.ajax({
@@ -147,7 +147,7 @@ else {
   ERROR_MSG = "progrezz-api-rest.js: jQuery >= 1.5.0 is required. Requests are disabled."
   alert( ERROR_MSG )
   
-  RESTResquest.prototype.request = function( json ) {
+  RESTRequest.prototype.request = function( json ) {
     alert( ERROR_MSG )
     if(this.onEnd  != null) this.onEnd();
   };
