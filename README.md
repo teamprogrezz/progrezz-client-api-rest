@@ -4,7 +4,8 @@
 Library for easy access to progreszz's server API REST, by JSON format.
 
 ## 2. Use ##
-Request make it by ````RESTResquest```` object type. Like you see on ````example.html```` file, you can make a server request like this:
+Request make it by ````RESTRequest```` object type. Like you see on ````example.html```` file, you can make a server request like this:
+
 ```javascript
 RESTRequest.DEFAULT.REQUEST_URL = "http://progrezz-server.herokuapp.com/dev/api/rest"
 rest_request = new RESTRequest()
@@ -20,7 +21,7 @@ rest_request.onEnd = function(json_response) {
 }
 
 // Send the template example request.
-rest_request.request( RESTResquest.getTemplateRequest() )
+rest_request.request( RESTRequest.getTemplateRequest() )
 ```
 
 
