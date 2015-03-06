@@ -17,7 +17,7 @@
   </form>
   
   <script type="text/javascript">
-    rest_request = new RESTResquest()
+    rest_request = new RESTRequest()
     rest_request.onComplete = function(json_response) {
       document.getElementById("output").innerHTML = GenericUtils.html.escape (JSON.stringify(json_response, null, '  '))
     }
@@ -29,7 +29,7 @@
 
     function reset_form() {
       // Setup default text
-      document.getElementById('form_request_str').value = JSON.stringify( RESTResquest.getTemplateRequest(), null, '  ' );
+      document.getElementById('form_request_str').value = JSON.stringify( RESTRequest.getTemplateRequest(), null, '  ' );
     }
     
     function send_form() {
