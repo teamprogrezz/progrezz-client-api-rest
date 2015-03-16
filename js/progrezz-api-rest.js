@@ -124,6 +124,8 @@ if( typeof $ !== 'undefined' && GenericUtils.versions.gteVersion($.fn.jquery, "1
       type:     json.metadata.request_type,
       url:      json.metadata.request_url,
       dataType: json.metadata.type,
+      crossDomain: true,
+      xhrFields: { withCredentials: true },
       data:     json,
       error:    function(xhr, textStatus, errorThrown) {
         if(self.onError != null) self.onError(xhr);
